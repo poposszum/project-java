@@ -1,4 +1,4 @@
-package com.example.firstproject;
+package com.example.firstproject.cart;
 
 
 import com.opencsv.bean.CsvToBeanBuilder;
@@ -11,8 +11,9 @@ import java.util.stream.Collectors;
 public class CartService {
 
     public List<Cart> cartList;
+
     public void parseCarts() {
-        String fileName = "D:\\project cum\\uno\\example0.csv";
+        String fileName = "src/main/resources/data/example0.csv";
 
         try {
             cartList = new CsvToBeanBuilder(new FileReader(fileName))
@@ -45,9 +46,9 @@ public class CartService {
     }
 
     public double getAverageCost() {
-       return (double) cartList.stream().map(Cart::getCost)
-               .mapToInt(Integer::intValue)
-               .sum() / cartList.size();
+        return (double) cartList.stream().map(Cart::getCost)
+                .mapToInt(Integer::intValue)
+                .sum() / cartList.size();
 
         // return getAggregatedCost() / getNumberOfCarts();
     }

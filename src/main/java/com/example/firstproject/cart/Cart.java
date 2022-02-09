@@ -1,4 +1,4 @@
-package com.example.firstproject;
+package com.example.firstproject.cart;
 
 import com.opencsv.bean.CsvBindByName;
 import lombok.Data;
@@ -24,9 +24,10 @@ public class Cart {
     @Override
     public String toString() {
         return "id :" + this.getId()
-                + ", owner name: " + this.getOwnerName()
+                + ", owner_name: " + this.getOwnerName()
                 + ", cost: " + this.getCost()
-                + ", number of items: " + this.getNumberOfItems()
-                + ", created at:" + this.getCreatedAt();
+                + ", number_of_items: " + this.getNumberOfItems()
+                + ", created_at:" + this.getCreatedAt()
+                + "\n";
     }
 }
